@@ -1,0 +1,91 @@
+.cardslide {
+    position: relative;
+    margin-top: -5px;
+    height: 80px;
+    width: 100%;
+    border-top: 1px solid rgb(218, 209, 209);
+    display: flex;
+    align-items: center;
+    column-gap: 0px;
+    overflow-x: scroll; /* Activer le défilement horizontal */
+    overflow-y: hidden; /* Masquer le défilement vertical */
+    scroll-snap-type: x mandatory;
+    cursor: pointer;
+    scroll-behavior: smooth; /* Ajoutez cette propriété pour activer le défilement en douceur */
+    transition: scroll-left 0.2s ease-in-out; /* Ajoutez une transition pour une animation fluide */
+
+    .cardtype {
+        min-width: 30%;
+        height: 100%;
+        scroll-snap-align: start;
+        position: relative;
+        text-align: center;
+        position: relative;
+        .left{
+            position: absolute;
+            font-size: 30px;
+
+        }
+        p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;  
+        }
+        .rigthwhite{
+            display: none;
+        }
+        .rigthblack{
+           display: none;
+        }
+      }
+     .white {
+        background: white;
+        p{
+            color: black;
+        }
+        }
+  
+  .black {
+    background-color: black;
+    p{
+        color: white;
+    }
+  }
+  }
+  
+  .cardslide::-webkit-scrollbar {
+    display: none; /* Masquer la barre de défilement sur les appareils de bureau */
+  }
+
+
+@media screen and (max-width : 850px) {
+    .cardtype{
+        min-width: 100% !important;
+        .rigthwhite{
+            display: block !important;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: $background-two;
+            border-radius: 50%;
+            padding: 3px;
+            width: 20px;
+            height: 20px;
+        }
+        .rigthblack{
+            display: block !important;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: $background-two;
+            border-radius: 50%;
+            padding: 3px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

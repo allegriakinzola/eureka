@@ -1,0 +1,69 @@
+.blocprofil{
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 250px;
+    background-color: rgba(235, 239, 239, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 5px;
+    border: 1px solid rgb(228, 226, 223);
+    .para1{
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        font-size: 60px;
+        z-index: 2;
+        font-family: $font-3;
+        color: $color-blue;
+    }
+    .para2{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 60px;
+        z-index: 2;
+        font-family: $font-3;
+        color: $color-blue
+    }
+    .blocprofilabs{
+        position: relative;
+        .profiltitle{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            margin: 10px auto;
+            p{
+                font-weight: bold;
+            }
+            img{
+                width: 65px;
+            }
+
+        }
+       
+    }
+    .comment{
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+        font-size: 15px;
+    }
+    .date{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width : 650px) {
+    .blocprofil{
+        left: 20%;
+        top: 18%;
+        transform: translate(-18%,-20%);
+    }
+}

@@ -1,0 +1,144 @@
+.home{
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    overflow: hidden;
+    .homecontent{
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .homecontentsplain{
+            flex: 1.9;
+            h1 {
+                font-weight: bold;
+                margin-bottom: 25px;
+                width: 60%;
+            }
+            h5 {
+                width: 80%;
+                font-size: 15px;
+            }
+            .cartebouton{
+                margin-top: 25px;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                a{
+                    padding: 15px 18px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                }
+                .cp{
+                    background-image: linear-gradient(to right bottom, #000000, #191819, #292a2c, #393d3f, #4b5151);
+                    color: $color-white;
+                }
+                .cr{
+                    background-image: linear-gradient(to right, #c9cbcb, #d6d8d8, #e4e5e5, #f2f2f2, #ffffff);
+                    border: 1px solid black; 
+                }
+            }
+            .testemony{
+                display: flex;
+                align-items: center;
+                gap: px;
+                .profil{
+                    img{
+                        width: 50px;
+                        border-radius: 50%;
+                        border: 2px solid black;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+                        &:hover{
+                            border: 2px solid $color-blue;
+                        }
+                    }
+                }
+                .profil2{
+                    transform: translateX(-15px);
+                }
+                .profil3{
+                    transform: translateX(-25px);
+                }
+            }
+
+        }
+        .homecontentimage{
+            flex: 1.1;
+            img{
+                width: 510px;
+                position: relative;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width : 1200px) {
+    .homecontent{
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        .homecontentsplain{
+            margin-top: 40px;
+            h1 {
+                font-weight: bold;
+                margin-bottom: 25px;
+                width: 80% !important;
+                margin: 0 auto;
+            }
+            h5 {
+                font-size: 15px;
+                margin: 0 auto;
+                width: 50% !important;
+            }
+            .cartebouton{
+                margin: 25px auto !important;
+                width: 60%;
+                justify-content: space-around;
+
+                }
+
+            .testemony{
+                width: 130px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width : 650px) {
+    .homecontent{
+        width: 95% !important;
+        .homecontentsplain{
+            margin-top: 40px;
+            h1 {
+                width: 85% !important;
+            }
+            h5 {
+                width: 95% !important;
+            }
+            .cartebouton{
+                margin: 25px auto !important;
+                width: 80%;
+                justify-content: space-around;
+                }
+
+            .testemony{
+                width: 130px;
+                margin: auto auto;
+            }
+        }
+        .homecontentimage{
+            margin-top: 20px;
+            img{
+                width: 300px !important;
+            }
+        }
+    }
+}
