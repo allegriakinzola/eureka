@@ -1,11 +1,12 @@
 .formcardstoled{
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 40px;
     form{
         width: 90%;
         margin: 0 auto;
         box-shadow: 0 0 15 px rgba(0, 0, 0, 0.2) ;
+        
         .inputcontenaire{
             label{
                 font-size: 20px;
@@ -18,10 +19,16 @@
                 align-items: center;
                 input, select{
                     padding: 15px;
-                    flex-basis: 80%;
+                    flex-basis: 100%;
                     border: none;
                     border-top-left-radius: 5px;
                     border-bottom-left-radius: 5px;
+                    &:focus{
+                        outline: none;
+                        border-color: none;
+                        box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                        
+                    }
                 }
                 span{
                     padding: 13px;
@@ -37,5 +44,55 @@
     }
     .submit{
         padding: 10px 20px;
+        margin: 20px 0px 20px 0px;
+        outline: none;
+        border: none;
+        width: 50%;
+    }
+}
+
+
+
+@media screen and (max-width : 900px) {
+    .formcardstoled{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 40px;
+        form{
+            width: 90%;
+            margin: 0 auto;
+            box-shadow: 0 0 15 px rgba(0, 0, 0, 0.2) ;
+            .inputcontenaire{
+                label{
+                    font-size: 20px;
+                    display: block;
+                    margin-bottom: 5px;
+    
+                }
+                .inputgroupe{
+                    display: flex;
+                    align-items: center;
+                    input, select{
+                        padding: 15px;
+                        flex-basis: 100%;
+                        border: none;
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                    }
+                    span{
+                        padding: 13px;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        background-image: linear-gradient(to left, #0b50eb, #0b50eb, #0b50eb, #0b50eb, #0b50eb);
+                    }
+                }
+            }
+            .inputcontenaire:not(:nth-child(1)){
+                margin-top: 10px;
+            }
+        }
+        .submit{
+            padding: 10px 20px;
+        }
     }
 }

@@ -11,6 +11,9 @@
         align-items: center;
         justify-content: space-between;
         .homecontentsplain{
+            small{
+                color: red;
+            }
             flex: 1.9;
             h1 {
                 font-weight: bold;

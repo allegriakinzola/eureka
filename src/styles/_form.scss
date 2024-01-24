@@ -1,19 +1,19 @@
 .formbloc{
-    width: 100%;
+    width: 60%;
     background: $color-white;
-    height: 700px;
+    height: 900px;
     position: relative;
+    padding-top: 100px;
+    margin: 0 auto;
     .formulaire{
         height: px;
         width: 90%;
         margin: 0 auto;
         background: $background-two;
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
         border-radius: 7px;
-        
         .formbtn{
             padding-top: 20px;
             width: 100%;
@@ -29,4 +29,11 @@
         }
     }
     
+}
+
+@media screen and (max-width : 900px) {
+    .formbloc{
+        width: 100%;
+        
+    }
 }

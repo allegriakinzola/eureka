@@ -4,6 +4,7 @@ import { Navbare } from './sections/navbare';
 import { Cardslide } from './sections/cardslide';
 import './styles/style.scss';
 import { Form } from './sections/form';
+import { Footer } from './sections/footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Cardslide/>
       <Service/>
       <Form/>
+      <Footer/>
     </div>
   )
 }

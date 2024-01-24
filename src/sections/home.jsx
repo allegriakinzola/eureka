@@ -48,6 +48,7 @@ export function Home(){
                      ))
                     }
                     </div>
+                    <small className='testemonytittle'>témoignages ...</small>
                 </div>
                 <div className="homecontentimage">
                     <img src={imageillustration2}></img>

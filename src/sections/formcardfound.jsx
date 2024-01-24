@@ -16,7 +16,6 @@ export function Formcardfound() {
     e.preventDefault();
 
     try {
-      // Envoyer les données au backend
       const response = await axios.post('http://localhost:8000/userscardsfound', {
         name,
         lastname,
@@ -27,7 +26,6 @@ export function Formcardfound() {
         lastnameusercardown
       });
 
-      // Afficher la réponse du backend
       console.log(response.data);
       if(response.data === "exist"){
         setMareponse("votre carte a été trouvée")
@@ -35,7 +33,6 @@ export function Formcardfound() {
         setMareponse("votre carte n'a pas été trouvée")
       }
 
-      // Réinitialiser le formulaire
       setName('');
       setLastname('');
       setEmail('');
@@ -152,7 +149,7 @@ export function Formcardfound() {
           </div>
         </div>
 
-        <button type='submit'>Envoyer</button>
+        <button type='submit' className='submit'>Envoyer</button>
         <p>{mareponse}</p>
 
       </form>

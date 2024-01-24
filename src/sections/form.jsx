@@ -13,8 +13,8 @@ export function Form() {
     <div className="formbloc">
       <div className="formulaire">
         <div className="formbtn">
-          <button onClick={changeform} style={{backgroundImage: formcp ? "linear-gradient(to left, #6b6f6f, #8e9192, #b3b4b5, #d8d9da, #ffffff)" : "linear-gradient(to right bottom, #000000, #191819, #292a2c, #393d3f, #4b5151)"}}>carte perdue</button>
-          <button onClick={changeform} style={{backgroundImage: formcp ? "linear-gradient(to right bottom, #000000, #191819, #292a2c, #393d3f, #4b5151)" : "linear-gradient(to left, #6b6f6f, #8e9192, #b3b4b5, #d8d9da, #ffffff)"} }>carte rétrouvée</button>
+          <button onClick={changeform} style={{backgroundColor: formcp ? "black" : "white", color : formcp ? "white" : "black" }}>carte perdue</button>
+          <button onClick={changeform} style={{backgroundColor: formcp ? "white" : "black", color : formcp ? "black" : "white"} }>carte rétrouvée</button>
         </div>
         <>
         {
