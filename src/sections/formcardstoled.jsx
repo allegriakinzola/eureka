@@ -119,8 +119,9 @@ export function Formcardstoled() {
             <span className='inputicone'><GiHumanTarget/></span>
           </div>
         </div>
-
-        <button type='submit'>Submit</button>
+        <div className='submitcont'>
+          <button type='submit' className='submit'>Envoyer</button>
+        </div>
         <p>{mareponse}</p>
 
       </form>
