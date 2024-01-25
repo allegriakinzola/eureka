@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { GiHumanTarget } from 'react-icons/gi';
+import { FaPerson } from "react-icons/fa6";
 
 export function Formcardfound() {
   const [name, setName] = useState('');
@@ -58,7 +59,7 @@ export function Formcardfound() {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <span className='inputicone'><GiHumanTarget/></span>
+            <span className='inputicone'><FaPerson /></span>
           </div>
         </div>
 

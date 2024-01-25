@@ -8,7 +8,7 @@
         box-shadow: 0 0 15 px rgba(0, 0, 0, 0.2) ;
         .inputcontenaire{
             label{
-                font-size: 20px;
+                font-size: 13px;
                 display: block;
                 margin-bottom: 5px;
 
@@ -33,7 +33,8 @@
                     padding: 13px;
                     border-top-right-radius: 5px;
                     border-bottom-right-radius: 5px;
-                    background-image: linear-gradient(to left, #0b50eb, #0b50eb, #0b50eb, #0b50eb, #0b50eb);
+                    background-color: black;
+                    color: white;
                 }
             }
         }
