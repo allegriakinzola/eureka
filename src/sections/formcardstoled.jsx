@@ -39,6 +39,7 @@ export function Formcardstoled() {
       setCardType('');
     } catch (error) {
       console.error(error);
+      setMareponse("votre carte n'a pas été trouvée")
     }
   };
 
