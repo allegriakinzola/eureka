@@ -123,7 +123,9 @@ export function Formcardstoled() {
         <div className='submitcont'>
           <button type='submit' className='submit'>Envoyer</button>
         </div>
-        <p>{mareponse}</p>
+        <div className='reponse'>
+          <p>{mareponse}</p>
+        </div>
 
       </form>
     </div>
