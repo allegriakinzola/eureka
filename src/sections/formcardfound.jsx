@@ -10,6 +10,7 @@ import { FaPersonDrowning } from "react-icons/fa6";
 export function Formcardfound() {
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
+  const [lastnameError, setLastnameError] = useState('')
   const [email, setEmail] = useState('');
   const [tel, setTel] = useState('');
   const [cardtype, setCardType] = useState('');
@@ -66,6 +67,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPerson /></span>
           </div>
+          <small>shh</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -80,6 +82,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPersonBreastfeeding /></span>
           </div>
+          <small>shh</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -94,6 +97,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><MdEmail /></span>
           </div>
+          <small>shh</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -108,6 +112,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><IoCallSharp /></span>
           </div>
+          <small>shh</small>
         </div>
         <div className='inputcontenaire'>
           <label htmlFor='nameusercardown'>nom du propriétaire de la carte</label>
@@ -121,6 +126,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPersonDotsFromLine /></span>
           </div>
+          <small>shh</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -135,6 +141,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPersonDrowning /></span>
           </div>
+          <small>shh</small>
         </div>
 
         <div className='inputcontenaire'>
