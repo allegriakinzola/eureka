@@ -5,6 +5,8 @@ import { FaPerson } from "react-icons/fa6";
 import { FaPersonBreastfeeding } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { IoCallSharp } from "react-icons/io5";
+import { FaPersonDotsFromLine } from "react-icons/fa6";
+import { FaPersonDrowning } from "react-icons/fa6";
 
 export function Formcardfound() {
   const [name, setName] = useState('');
@@ -118,7 +120,7 @@ export function Formcardfound() {
               value={nameusercardown}
               onChange={(e) => setNameusercardown(e.target.value)}
             />
-            <span className='inputicone'><GiHumanTarget/></span>
+            <span className='inputicone'><FaPersonDotsFromLine /></span>
           </div>
         </div>
 
@@ -132,7 +134,7 @@ export function Formcardfound() {
               value={lastnameusercardown}
               onChange={(e) => setLastnameusercardown(e.target.value)}
             />
-            <span className='inputicone'><GiHumanTarget/></span>
+            <span className='inputicone'><FaPersonDrowning /></span>
           </div>
         </div>
 
