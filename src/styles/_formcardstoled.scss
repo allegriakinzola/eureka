@@ -94,6 +94,12 @@
                         border-top-left-radius: 5px;
                         border-bottom-left-radius: 5px;
                     }
+                    span{
+                        padding: 13px;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                       
+                    }
                 }
             }
             .inputcontenaire:not(:nth-child(1)){
