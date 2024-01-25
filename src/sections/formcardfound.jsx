@@ -2,6 +2,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import { GiHumanTarget } from 'react-icons/gi';
 import { FaPerson } from "react-icons/fa6";
+import { FaPersonBreastfeeding } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { IoCallSharp } from "react-icons/io5";
 
 export function Formcardfound() {
   const [name, setName] = useState('');
@@ -74,7 +77,7 @@ export function Formcardfound() {
               value={lastname}
               onChange={(e) => setLastname(e.target.value)}
             />
-            <span className='inputicone'><GiHumanTarget/></span>
+            <span className='inputicone'><FaPersonBreastfeeding /></span>
           </div>
         </div>
 
@@ -88,7 +91,7 @@ export function Formcardfound() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <span className='inputicone'><GiHumanTarget/></span>
+            <span className='inputicone'><MdEmail /></span>
           </div>
         </div>
 
@@ -102,7 +105,7 @@ export function Formcardfound() {
               value={tel}
               onChange={(e) => setTel(e.target.value)}
             />
-            <span className='inputicone'><GiHumanTarget/></span>
+            <span className='inputicone'><IoCallSharp /></span>
           </div>
         </div>
         <div className='inputcontenaire'>

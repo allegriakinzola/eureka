@@ -25,7 +25,7 @@
                     &:focus{
                         outline: none;
                         border-color: none;
-                        box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                        box-shadow: rgba(247, 244, 244, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
                         
                     }
                 }
@@ -33,7 +33,7 @@
                     padding: 13px;
                     border-top-right-radius: 5px;
                     border-bottom-right-radius: 5px;
-                    background-color: black;
+                    background-color: rgb(196, 192, 192);
                     color: white;
                 }
             }
@@ -55,7 +55,8 @@
             width: 50%;
             padding: 15px 2px;
             border-radius: 5px;
-            background-color: blue;
+            background-color: $color-blue;
+            color: white;
             
         }
     }
