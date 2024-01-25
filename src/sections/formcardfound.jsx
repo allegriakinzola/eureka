@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { GiHumanTarget } from 'react-icons/gi';
 import { FaPerson } from "react-icons/fa6";
 import { FaPersonBreastfeeding } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -153,6 +152,7 @@ export function Formcardfound() {
               <option value='visacard'>carte de service</option>
               <option value='passport'>Passport</option>
             </select>
+            <span className='inputicone'><FaPersonDrowning/></span>
           </div>
         </div>
 
