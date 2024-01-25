@@ -9,6 +9,7 @@ import { FaPersonDrowning } from "react-icons/fa6";
 
 export function Formcardfound() {
   const [name, setName] = useState('');
+  const [nameError, setNameError] = useState("")
   const [lastname, setLastname] = useState('');
   const [lastnameError, setLastnameError] = useState('')
   const [email, setEmail] = useState('');
@@ -38,17 +39,14 @@ export function Formcardfound() {
       }else{
         setMareponse("votre carte n'a pas été trouvée")
       }
-
-      setName('');
-      setLastname('');
-      setEmail('');
-      setTel('');
-      setCardType('');
-      setNameusercardown('')
-      setLastnameusercardown('')
     } catch (error) {
       console.error(error);
-      setMareponse("votre carte n'a pas été trouvée")
+      if(lastname === ''){
+        setLastnameError("ce champs ne peut pas être vide")
+      }
+      if(name === ''){
+        setNameError("ce champs ne peut pas être vide")
+      }
     }
   };
 
@@ -67,7 +65,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPerson /></span>
           </div>
-          <small>shh</small>
+          <small>{nameError} </small>
         </div>
 
         <div className='inputcontenaire'>
@@ -82,7 +80,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPersonBreastfeeding /></span>
           </div>
-          <small>shh</small>
+          <small>{lastnameError}</small>
         </div>
 
         <div className='inputcontenaire'>
