@@ -29,7 +29,6 @@ export function Formcardstoled() {
         cardtype,
       });
 
-      // Afficher la réponse du backend
       console.log(response.data);
       if(response.data === "exist"){
         setMareponse("votre carte a été trouvée")
