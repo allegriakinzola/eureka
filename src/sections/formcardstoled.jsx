@@ -36,7 +36,7 @@ export function Formcardstoled() {
         setMareponse("votre carte n'a pas été trouvée")
       }
 
-      // Réinitialiser le formulaire
+  
       setName('');
       setLastname('');
       setEmail('');
