@@ -34,9 +34,7 @@ export function Formcardstoled() {
         setMareponse("votre carte a été trouvée")
       }else{
         setMareponse("votre carte n'a pas été trouvée")
-      }
-
-  
+      }  
       setName('');
       setLastname('');
       setEmail('');
