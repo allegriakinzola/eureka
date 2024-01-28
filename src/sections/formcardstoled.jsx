@@ -27,7 +27,7 @@ export function Formcardstoled() {
         email,
         tel,
         cardtype,
-      })
+      });
 
       console.log(response.data);
       if(response.data === "exist"){
