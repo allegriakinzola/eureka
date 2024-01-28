@@ -21,7 +21,7 @@ export function Formcardstoled() {
 
     try {
       // Envoyer les données au backend
-      const response = await axios.post('http://localhost:8000/userscardsstoled', {
+      const response = await axios.post('https://heurekaback.onrender.com/userscardsstoled', {
         name,
         lastname,
         email,
@@ -35,14 +35,9 @@ export function Formcardstoled() {
       }else{
         setMareponse("votre carte n'a pas été trouvée")
       }  
-      setName('');
-      setLastname('');
-      setEmail('');
-      setTel('');
-      setCardType('');
     } catch (error) {
-      console.error(error);
-      setMareponse("votre carte n'a pas été trouvée")
+      console.error(`une erreur s'est produite lors de l'envoie des données : ${error}`);
+      
     }
   };
 
@@ -61,6 +56,7 @@ export function Formcardstoled() {
             />
             <span className='inputicone'><FaPerson/></span>
           </div>
+          <small>reponse : {mareponse} </small>
         </div>
 
         <div className='inputcontenaire'>

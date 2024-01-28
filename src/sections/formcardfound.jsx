@@ -23,7 +23,7 @@ export function Formcardfound() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/userscardsfound', {
+      const response = await axios.post('https://heurekaback.onrender.com/userscardsfound', {
         name,
         lastname,
         email,
@@ -40,14 +40,7 @@ export function Formcardfound() {
         setMareponse("votre carte n'a pas été trouvée")
       }
     } catch (error) {
-      console.error(error)
-      
-      if(lastname === ''){
-        setLastnameError("ce champs ne peut pas être vide")
-      }
-      if(name === ''){
-        setNameError("ce champs ne peut pas être vide")
-      }
+      console.error(`une erreur s'est produite lors de l'envoie des données : ${error}`);
     }
   };
 
@@ -66,7 +59,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPerson /></span>
           </div>
-          <small>{nameError} </small>
+          <small>reponse : {mareponse} </small>
         </div>
 
         <div className='inputcontenaire'>
@@ -140,7 +133,7 @@ export function Formcardfound() {
             />
             <span className='inputicone'><FaPersonDrowning /></span>
           </div>
-          <small>shh</small>
+          <small>reponse {mareponse} </small>
         </div>
 
         <div className='inputcontenaire'>
