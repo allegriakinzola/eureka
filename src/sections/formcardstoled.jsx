@@ -26,11 +26,12 @@ export function Formcardstoled() {
   })
 
   const onBlur = (e) => {
-    console.log("i'm blured")
+    const name = e.target.value
+    setTouched({...touched, [name] : true })
   }
 
   const handleChange = (e) => {
-    setDataForm({[e.target.name] : e.target.value})
+    setDataForm({...dataForm, [e.target.name] : e.target.value})
   }
 
   const handleSubmit = async (e) => {
