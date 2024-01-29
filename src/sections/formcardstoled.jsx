@@ -33,13 +33,16 @@ export function Formcardstoled() {
       tel : "", 
       cardtype : "",
     }
-    if (touched.name && touched === ""){
-      errors.name = "ce champs est vide"
+    if (touched.name == true && dataForm.name === ""){
+        errors.name = "ce champs est vide"
     }
     return errors
   }
-  const onBlur = async (e) => {
-    const name = e.target.value
+
+  const errors = validate()
+  
+  const onBlur = (e) => {
+    const {name} = e.target
     setTouched({...touched, [name] : true })
   }
 
@@ -83,7 +86,7 @@ export function Formcardstoled() {
             />
             <span className='inputicone'><FaPerson/></span>
           </div>
-          <small>reponse : {mareponse} </small>
+          <small>{errors.name}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -100,6 +103,7 @@ export function Formcardstoled() {
             />
             <span className='inputicone'><FaPersonBreastfeeding/></span>
           </div>
+          <small>{errors.lastname}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -116,6 +120,7 @@ export function Formcardstoled() {
             />
             <span className='inputicone'><MdEmail/></span>
           </div>
+          <small>{errors.email}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -132,6 +137,7 @@ export function Formcardstoled() {
             />
             <span className='inputicone'>< IoCallSharp/></span>
           </div>
+          <small>{errors.tel}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -152,6 +158,7 @@ export function Formcardstoled() {
             </select>
             <span className='inputicone'><GiHumanTarget/></span>
           </div>
+          <small>{errors.cardtype}</small>
         </div>
         <div className='submitcont'>
           <button type='submit' className='submit'>Envoyer</button>
