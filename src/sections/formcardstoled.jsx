@@ -31,7 +31,8 @@ export function Formcardstoled() {
   }
 
   const handleChange = (e) => {
-    setDataForm({...dataForm, [e.target.name] : e.target.value})
+    const {name, value} = e.target
+    setDataForm({...dataForm, [name] : value})
   }
 
   const handleSubmit = async (e) => {
