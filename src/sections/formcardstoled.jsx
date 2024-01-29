@@ -10,6 +10,13 @@ import { FaPersonDrowning } from "react-icons/fa6";
 
 export function Formcardstoled() {
   const [mareponse, setMareponse] = useState('')
+  const [touched, setTouched] = useState({
+    name : false,
+    lastname : false,
+    email : false,
+    tel : false, 
+    cardtype : false
+  })
   const [dataForm, setDataForm] = useState({
     name :"",
     lastname: "",
@@ -17,6 +24,10 @@ export function Formcardstoled() {
     tel : "", 
     cardtype : "",
   })
+
+  const onBlur = (e) => {
+    console.log("i'm blured")
+  }
 
   const handleChange = (e) => {
     setDataForm({[e.target.name] : e.target.value})
@@ -26,7 +37,6 @@ export function Formcardstoled() {
     e.preventDefault();
 
     try {
-      // Envoyer les données au backend
       const response = await axios.post('https://heurekaback.onrender.com/userscardsstoled', dataForm);
 
       console.log(response.data);
@@ -54,6 +64,7 @@ export function Formcardstoled() {
               placeholder='nom'
               value={dataForm.name}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><FaPerson/></span>
           </div>
@@ -70,6 +81,7 @@ export function Formcardstoled() {
               placeholder='prenom'
               value={dataForm.lastname}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><FaPersonBreastfeeding/></span>
           </div>
@@ -85,6 +97,7 @@ export function Formcardstoled() {
               placeholder='Email'
               value={dataForm.email}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><MdEmail/></span>
           </div>
@@ -100,6 +113,7 @@ export function Formcardstoled() {
               placeholder='Tel'
               value={dataForm.tel}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'>< IoCallSharp/></span>
           </div>
