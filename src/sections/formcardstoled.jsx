@@ -25,14 +25,27 @@ export function Formcardstoled() {
     cardtype : "",
   })
 
-  const onBlur = (e) => {
+  const validate = () => {
+    const errors = {
+      name :"",
+      lastname: "",
+      email : "",
+      tel : "", 
+      cardtype : "",
+    }
+    if (touched.name && touched === ""){
+      errors.name = "ce champs est vide"
+    }
+    return errors
+  }
+  const onBlur = async (e) => {
     const name = e.target.value
     setTouched({...touched, [name] : true })
   }
 
   const handleChange = (e) => {
     const {name, value} = e.target
-    setDataForm({...dataForm, [name] : value})
+    setDataForm({[name] : value})
   }
 
   const handleSubmit = async (e) => {
