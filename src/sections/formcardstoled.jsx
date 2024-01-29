@@ -9,25 +9,25 @@ import { FaPersonDotsFromLine } from "react-icons/fa6";
 import { FaPersonDrowning } from "react-icons/fa6";
 
 export function Formcardstoled() {
-  const [name, setName] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [email, setEmail] = useState('');
-  const [tel, setTel] = useState('');
-  const [cardtype, setCardType] = useState('');
   const [mareponse, setMareponse] = useState('')
+  const [dataForm, setDataForm] = useState({
+    name :"",
+    lastname: "",
+    email : "",
+    tel : "", 
+    cardtype : "",
+  })
+
+  const handleChange = (e) => {
+    setDataForm({[e.target.name] : e.target.value})
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       // Envoyer les données au backend
-      const response = await axios.post('https://heurekaback.onrender.com/userscardsstoled', {
-        name,
-        lastname,
-        email,
-        tel,
-        cardtype,
-      });
+      const response = await axios.post('https://heurekaback.onrender.com/userscardsstoled', dataForm);
 
       console.log(response.data);
       if(response.data === "exist"){
@@ -50,9 +50,10 @@ export function Formcardstoled() {
             <input
               type='text'
               id='name'
+              name='name'
               placeholder='nom'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={dataForm.name}
+              onChange={handleChange}
             />
             <span className='inputicone'><FaPerson/></span>
           </div>
@@ -65,9 +66,10 @@ export function Formcardstoled() {
             <input
               type='text'
               id='lastname'
+              name='lastname'
               placeholder='prenom'
-              value={lastname}
-              onChange={(e) => setLastname(e.target.value)}
+              value={dataForm.lastname}
+              onChange={handleChange}
             />
             <span className='inputicone'><FaPersonBreastfeeding/></span>
           </div>
@@ -79,9 +81,10 @@ export function Formcardstoled() {
             <input
               type='text'
               id='email'
+              email='email'
               placeholder='Email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={dataForm.email}
+              onChange={handleChange}
             />
             <span className='inputicone'><MdEmail/></span>
           </div>
@@ -93,9 +96,10 @@ export function Formcardstoled() {
             <input
               type='text'
               id='tel'
+              name='tel'
               placeholder='Tel'
-              value={tel}
-              onChange={(e) => setTel(e.target.value)}
+              value={dataForm.tel}
+              onChange={handleChange}
             />
             <span className='inputicone'>< IoCallSharp/></span>
           </div>
@@ -106,8 +110,9 @@ export function Formcardstoled() {
           <div className='inputgroupe'>
             <select
               id='cardtype'
-              value={cardtype}
-              onChange={(e) => setCardType(e.target.value)}
+              name='cardtype'
+              value={dataForm.cardtype}
+              onChange={handleChange}
             >
               <option value=''>Select Card Type</option>
               <option value='electercard'>carte d'électeur</option>

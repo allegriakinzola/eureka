@@ -8,32 +8,27 @@ import { FaPersonDotsFromLine } from "react-icons/fa6";
 import { FaPersonDrowning } from "react-icons/fa6";
 
 export function Formcardfound() {
-  const [name, setName] = useState('');
-  const [nameError, setNameError] = useState("")
-  const [lastname, setLastname] = useState('');
-  const [lastnameError, setLastnameError] = useState('')
-  const [email, setEmail] = useState('');
-  const [tel, setTel] = useState('');
-  const [cardtype, setCardType] = useState('');
   const [mareponse, setMareponse] = useState('')
-  const [nameusercardown, setNameusercardown] = useState('')
-  const [lastnameusercardown, setLastnameusercardown] = useState('')
+  const [dataForm, setDataForm] = useState({
+    name :"",
+    lastname : "",
+    email : "",
+    tel : "",
+    cardtype : "",
+    nameusercardown: "", 
+    lastnameusercardown : "",
+  })
+  
+
+  const handleChange = (e) => {
+    setDataForm({[e.target.name] : e.target.value})
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://heurekaback.onrender.com/userscardsfound', {
-        name,
-        lastname,
-        email,
-        tel,
-        cardtype,
-        nameusercardown,
-        lastnameusercardown
-      });
-      
-
+      const response = await axios.post('https://heurekaback.onrender.com/userscardsfound', dataForm);
       console.log(response.data);
       if(response.data === "exist"){
         setMareponse("votre carte a été trouvée")
@@ -53,10 +48,10 @@ export function Formcardfound() {
           <div className='inputgroupe'>
             <input
               type='text'
-              id='name'
+              name='name'
               placeholder='Name'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={dataForm.name}
+              onChange={handleChange}
             />
             <span className='inputicone'><FaPerson /></span>
           </div>
@@ -69,13 +64,14 @@ export function Formcardfound() {
             <input
               type='text'
               id='lastname'
+              name='lastname'
               placeholder='Lastname'
-              value={lastname}
-              onChange={(e) => setLastname(e.target.value)}
+              value={dataForm.lastname}
+              onChange={handleChange}
             />
             <span className='inputicone'><FaPersonBreastfeeding /></span>
           </div>
-          <small>{lastnameError}</small>
+          <small></small>
         </div>
 
         <div className='inputcontenaire'>
@@ -84,9 +80,10 @@ export function Formcardfound() {
             <input
               type='text'
               id='email'
+              name='email'
               placeholder='Email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={dataForm.email}
+              onChange={handleChange}
             />
             <span className='inputicone'><MdEmail /></span>
           </div>
@@ -98,10 +95,11 @@ export function Formcardfound() {
           <div className='inputgroupe'>
             <input
               type='text'
+              name='tel'
               id='tel'
               placeholder='Tel'
-              value={tel}
-              onChange={(e) => setTel(e.target.value)}
+              value={dataForm.tel}
+              onChange={handleChange}
             />
             <span className='inputicone'><IoCallSharp /></span>
           </div>
@@ -113,9 +111,10 @@ export function Formcardfound() {
             <input
               type='text'
               id='nameusercardown'
-              placeholder='Tel'
-              value={nameusercardown}
-              onChange={(e) => setNameusercardown(e.target.value)}
+              name='nameusercardown'
+              placeholder='nom du propriétaire de la carte'
+              value={dataForm.nameusercardown}
+              onChange={handleChange}
             />
             <span className='inputicone'><FaPersonDotsFromLine /></span>
           </div>
@@ -128,9 +127,10 @@ export function Formcardfound() {
             <input
               type='text'
               id='lastnameusercardown'
-              placeholder='Tel'
-              value={lastnameusercardown}
-              onChange={(e) => setLastnameusercardown(e.target.value)}
+              name='lastnameusercardown'
+              placeholder='prenom du propriétaire de la carte'
+              value={dataForm.lastnameusercardown}
+              onChange={handleChange}
             />
             <span className='inputicone'><FaPersonDrowning /></span>
           </div>
@@ -142,8 +142,9 @@ export function Formcardfound() {
           <div className='inputgroupe'>
             <select
               id='cardtype'
-              value={cardtype}
-              onChange={(e) => setCardType(e.target.value)}
+              name='cardtype'
+              value={dataForm.cardtype}
+              onChange={handleChange}
             >
               <option value=''>Select Card Type</option>
               <option value='electercard'>carte d'électeur</option>
