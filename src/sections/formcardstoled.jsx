@@ -36,6 +36,18 @@ export function Formcardstoled() {
     if (touched.name == true && dataForm.name === ""){
         errors.name = "ce champs est vide"
     }
+    if(touched.lastname == true && dataForm.lastname === "" ){
+      errors.lastname = "ce champs est vide"
+    }
+    if(touched.email == true && dataForm.email === "" ){
+      errors.email = "ce champs est vide"
+    }
+    if(touched.tel == true && dataForm.tel === "" ){
+      errors.tel = "ce champs est vide"
+    }
+    if(touched.cardtype == true && dataForm.cardtype === "" ){
+      errors.cardtype = "ce champs est vide"
+    }
     return errors
   }
 
@@ -51,9 +63,10 @@ export function Formcardstoled() {
     setDataForm({[name] : value})
   }
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post('https://heurekaback.onrender.com/userscardsstoled', dataForm);
 
@@ -112,7 +125,7 @@ export function Formcardstoled() {
             <input
               type='text'
               id='email'
-              email='email'
+              name='email'
               placeholder='Email'
               value={dataForm.email}
               onChange={handleChange}

@@ -9,6 +9,16 @@ import { FaPersonDrowning } from "react-icons/fa6";
 
 export function Formcardfound() {
   const [mareponse, setMareponse] = useState('')
+  const [touched, setTouched] = useState({
+    name : false,
+    lastname : false,
+    email : false,
+    tel : false,
+    cardtype : false,
+    nameusercardown: false, 
+    lastnameusercardown : false,
+
+  })
   const [dataForm, setDataForm] = useState({
     name :"",
     lastname : "",
@@ -18,7 +28,47 @@ export function Formcardfound() {
     nameusercardown: "", 
     lastnameusercardown : "",
   })
+
+  const validate = () => {
+    const errors = {
+      name :"",
+      lastname : "",
+      email : "",
+      tel : "",
+      cardtype : "",
+      nameusercardown: "", 
+      lastnameusercardown : "",
+    }
+    if(touched.name == true && dataForm.name === ""){tel
+      errors.name = "ce champs ne peut pas être vide "
+    }
+    if(touched.lastname == true && dataForm.lastname === ""){
+      errors.lastname = "ce champs ne peut pas être vide "
+    }
+    if(touched.email == true && dataForm.email === ""){
+      errors.email = "ce champs ne peut pas être vide "
+    }
+    if(touched.tel == true && dataForm.tel === ""){
+      errors.tel = "ce champs ne peut pas être vide "
+    }
+    if(touched.cardtype == true && dataForm.cardtype === ""){
+      errors.cardtype = "ce champs ne peut pas être vide "
+    }
+    if(touched.nameusercardown == true && dataForm.nameusercardown === ""){
+      errors.nameusercardown = "ce champs ne peut pas être vide "
+    }
+    if(touched.lastnameusercardown == true && dataForm.lastnameusercardown === ""){
+      errors.lastnameusercardown = "ce champs ne peut pas être vide "
+    }
+    return errors
+  }
+
+  const errors = validate()
   
+  const onBlur = (e) => {
+    const {name} = e.target.name
+    setMareponse({...touched, [name] : true })
+  }
 
   const handleChange = (e) => {
     setDataForm({[e.target.name] : e.target.value})
@@ -52,10 +102,11 @@ export function Formcardfound() {
               placeholder='Name'
               value={dataForm.name}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><FaPerson /></span>
           </div>
-          <small>reponse : {mareponse} </small>
+          <small>{errors.name}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -68,10 +119,11 @@ export function Formcardfound() {
               placeholder='Lastname'
               value={dataForm.lastname}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><FaPersonBreastfeeding /></span>
           </div>
-          <small></small>
+          <small>{errors.lastname}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -84,10 +136,11 @@ export function Formcardfound() {
               placeholder='Email'
               value={dataForm.email}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><MdEmail /></span>
           </div>
-          <small>shh</small>
+          <small>{errors.email}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -100,10 +153,11 @@ export function Formcardfound() {
               placeholder='Tel'
               value={dataForm.tel}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><IoCallSharp /></span>
           </div>
-          <small>shh</small>
+          <small>{errors.tel}</small>
         </div>
         <div className='inputcontenaire'>
           <label htmlFor='nameusercardown'>nom du propriétaire de la carte</label>
@@ -115,10 +169,11 @@ export function Formcardfound() {
               placeholder='nom du propriétaire de la carte'
               value={dataForm.nameusercardown}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><FaPersonDotsFromLine /></span>
           </div>
-          <small>shh</small>
+          <small>{errors.nameusercardown}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -131,10 +186,11 @@ export function Formcardfound() {
               placeholder='prenom du propriétaire de la carte'
               value={dataForm.lastnameusercardown}
               onChange={handleChange}
+              onBlur={onBlur}
             />
             <span className='inputicone'><FaPersonDrowning /></span>
           </div>
-          <small>reponse {mareponse} </small>
+          <small>{errors.lastnameusercardown}</small>
         </div>
 
         <div className='inputcontenaire'>
@@ -145,6 +201,7 @@ export function Formcardfound() {
               name='cardtype'
               value={dataForm.cardtype}
               onChange={handleChange}
+              onBlur={onBlur}
             >
               <option value=''>Select Card Type</option>
               <option value='electercard'>carte d'électeur</option>
@@ -155,6 +212,7 @@ export function Formcardfound() {
             </select>
             <span className='inputicone'><FaPersonDrowning/></span>
           </div>
+          <small>{errors.cardtype}</small>
         </div>
 
         <div className='submitcont'>
