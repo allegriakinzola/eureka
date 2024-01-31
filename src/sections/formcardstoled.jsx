@@ -86,7 +86,7 @@ export function Formcardstoled() {
       }  
     } catch (error) {
       console.error(`une erreur s'est produite lors de l'envoie des données : ${error}`);
-      
+      setMareponse("vous devez remplir tous les champs")
     }
   };
 
