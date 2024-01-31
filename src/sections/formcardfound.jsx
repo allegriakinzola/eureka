@@ -48,8 +48,10 @@ export function Formcardfound() {
     if(touched.email == true && dataForm.email === ""){
       errors.email = "ce champs ne peut pas être vide "
     }
-    if(touched.tel == true && dataForm.tel === ""){
-      errors.tel = "ce champs ne peut pas être vide "
+    if (touched.tel == true && dataForm.tel === "") {
+      errors.tel = "Ce champ est vide";
+    } else if (touched.tel == true && isNaN(dataForm.tel)) {
+      errors.tel = "Ce champ doit contenir un nombre";
     }
     if(touched.cardtype == true && dataForm.cardtype === ""){
       errors.cardtype = "ce champs ne peut pas être vide "
