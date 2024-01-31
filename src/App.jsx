@@ -9,12 +9,24 @@ import { Footer } from './sections/footer';
 function App() {
   return (
     <div className="App">
-      <Navbare/>
-      <Home id="home"/>
+      <div>
+        <Navbare/>
+      </div>
+      <div id="home">
+      <Home/>
+      </div>
+      <div>
       <Cardslide/>
+      </div>
+      <div id="action">
       <Service/>
-      <Form id="formulaire"/>
-      <Footer id="footer" />
+      </div>
+      <div id="formulaire">
+      <Form/>
+      </div>
+      <div id="footer" >
+      <Footer/>
+      </div>
     </div>
   )
 }
