@@ -22,4 +22,9 @@
             }
         }
     }
+    p{
+        @media screen and (max-width : 900px) {
+            font-size: 13px;
+        }
+    }
 }
