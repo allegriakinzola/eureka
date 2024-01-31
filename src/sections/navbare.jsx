@@ -32,7 +32,7 @@ export function Navbare(){
                         <a href="#action" onClick={deletenave} >Action</a>
                     </li>
                     <li>
-                        <a href="#formulaire">Formulaire</a>
+                        <a href="#formulaire" onClick={deletenave}>Formulaire</a>
                     </li>
                     <li className='bouton'>
                     <a className="boutondon">
