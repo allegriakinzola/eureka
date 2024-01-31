@@ -11,6 +11,11 @@ export function Navbare(){
         setIsackgroundflouactive(!isbackgroundflouactive)
     }
 
+    const deletenave = () => {
+        setIsnavActive(false)
+        setIsackgroundflouactive(false)
+    }
+
     return(
         <div className="navbare">
             <div className={`backgroundflou ${isbackgroundflouactive ? 'backgroundflouactive' : "" }`} onClick={navtoggle}>
@@ -21,13 +26,13 @@ export function Navbare(){
             <div className={`navbarelink ${iSnavAcative ? 'active' : ''}`}>
                 <ul>
                     <li>
-                        <a href="#home">Home</a>
+                        <a href="#home" onClick={deletenave} >Home</a>
                     </li>
                     <li>
-                        <a href="#action">Action</a>
+                        <a href="#action" onClick={deletenave} >Action</a>
                     </li>
                     <li>
-                        <a href="#home">Formulaire</a>
+                        <a href="#formulaire">Formulaire</a>
                     </li>
                     <li className='bouton'>
                     <a className="boutondon">
