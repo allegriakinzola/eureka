@@ -27,7 +27,7 @@ export function Navbare(){
                         <a href="#action">Action</a>
                     </li>
                     <li>
-                        <a href="#formulaire">Formulaire</a>
+                        <a href="#home">Formulaire</a>
                     </li>
                     <li className='bouton'>
                     <a className="boutondon">

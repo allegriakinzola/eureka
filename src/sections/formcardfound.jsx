@@ -30,6 +30,7 @@ export function Formcardfound() {
   })
 
   const validate = () => {
+    let errorMessage= "ce champs ne peut pas être vide ";
     const errors = {
       name :"",
       lastname : "",
@@ -39,11 +40,13 @@ export function Formcardfound() {
       nameusercardown: "", 
       lastnameusercardown : "",
     }
+
+
     if(touched.name == true && dataForm.name === ""){
-      errors.name = "ce champs ne peut pas être vide "
+      errors.name = errorMessage
     }
     if(touched.lastname == true && dataForm.lastname === ""){
-      errors.lastname = "ce champs ne peut pas être vide "
+      errors.lastname = errorMessage
     }
     if(touched.email == true && dataForm.email === ""){
       errors.email = "ce champs ne peut pas être vide "
@@ -57,10 +60,10 @@ export function Formcardfound() {
       errors.cardtype = "ce champs ne peut pas être vide "
     }
     if(touched.nameusercardown == true && dataForm.nameusercardown === ""){
-      errors.nameusercardown = "ce champs ne peut pas être vide "
+      errors.nameusercardown = "ce champs ne peut pas être vide"
     }
     if(touched.lastnameusercardown == true && dataForm.lastnameusercardown === ""){
-      errors.lastnameusercardown = "ce champs ne peut pas être vide "
+      errors.lastnameusercardown = "ce champs ne peut pas être vide"
     }
     return errors
   }

@@ -18,6 +18,7 @@ function Success () {
 
 export function Formcardstoled() {
   const [mareponse, setMareponse] = useState('')
+  const [cardislosted, setCardislosted] = useState(false)
   const [touched, setTouched] = useState({
     name : false,
     lastname : false,
@@ -62,6 +63,7 @@ export function Formcardstoled() {
   }
 
   const errors = validate()
+  let message ="blabla X";
   
   const onBlur = (e) => {
     const {name} = e.target
@@ -80,9 +82,11 @@ export function Formcardstoled() {
  
       console.log(response.data);
       if(response.data === "exist"){
+        setCardislosted(true)
         setMareponse("votre carte a été trouvée")
       }else{
         setMareponse("votre carte n'a pas été trouvée")
+        setCardislosted(true)
       }  
     } catch (error) {
       console.error(`une erreur s'est produite lors de l'envoie des données : ${error}`);
@@ -100,7 +104,7 @@ export function Formcardstoled() {
               type='text'
               id='name'
               name='name'
-              placeholder='nom'
+              placeholder='ex : kinzola'
               value={dataForm.name}
               onChange={handleChange}
               onBlur={onBlur}
@@ -117,7 +121,7 @@ export function Formcardstoled() {
               type='text'
               id='lastname'
               name='lastname'
-              placeholder='prenom'
+              placeholder='ex : allegria'
               value={dataForm.lastname}
               onChange={handleChange}
               onBlur={onBlur}
@@ -134,7 +138,7 @@ export function Formcardstoled() {
               type='text'
               id='email'
               name='email'
-              placeholder='Email'
+              placeholder='ex : allegriakinzola@gmail.com'
               value={dataForm.email}
               onChange={handleChange}
               onBlur={onBlur}
@@ -151,7 +155,7 @@ export function Formcardstoled() {
               type='text'
               id='tel'
               name='tel'
-              placeholder='Tel'
+              placeholder='ex : 0828312365'
               value={dataForm.tel}
               onChange={handleChange}
               onBlur={onBlur}
@@ -185,7 +189,7 @@ export function Formcardstoled() {
           <button type='submit' className='submit'>Envoyer</button>
         </div>
         <div className='reponse'>
-          <p>{mareponse}</p>
+          {cardislosted ? <p>{mareponse}</p> : <Success/>}
         </div>
 
       </form>
