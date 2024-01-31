@@ -8,6 +8,14 @@ import { IoCallSharp } from "react-icons/io5";
 import { FaPersonDotsFromLine } from "react-icons/fa6";
 import { FaPersonDrowning } from "react-icons/fa6";
 
+function Success () {
+  return(
+    <div className='sucess'>
+      <p>votre carte </p>
+    </div>
+  )
+}
+
 export function Formcardstoled() {
   const [mareponse, setMareponse] = useState('')
   const [touched, setTouched] = useState({
@@ -42,8 +50,10 @@ export function Formcardstoled() {
     if(touched.email == true && dataForm.email === "" ){
       errors.email = "ce champs est vide"
     }
-    if(touched.tel == true && dataForm.tel === "" ){
-      errors.tel = "ce champs est vide"
+    if (touched.tel == true && dataForm.tel === "") {
+      errors.tel = "Ce champ est vide";
+    } else if (touched.tel == true && isNaN(dataForm.tel)) {
+      errors.tel = "Ce champ doit contenir un nombre";
     }
     if(touched.cardtype == true && dataForm.cardtype === "" ){
       errors.cardtype = "ce champs est vide"
@@ -62,7 +72,7 @@ export function Formcardstoled() {
     const {name, value} = e.target
     setDataForm({[name] : value})
   }
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
