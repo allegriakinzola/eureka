@@ -9,7 +9,7 @@ export function Footer (){
                     <span><FaPerson/></span>
                     <span><FaPerson/></span>
                 </div>
-                <p>copyright allegria kinzola 2023</p>
+                <p>&copy; 2022 Votre Allegria Kinzola. Tous droits réservés.</p>
            </div>
         </div>
     )
