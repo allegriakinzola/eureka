@@ -102,7 +102,7 @@ export function Formcardfound() {
             <input
               type='text'
               name='name'
-              placeholder='Name'
+              placeholder='ex : allegria'
               value={dataForm.name}
               onChange={handleChange}
               onBlur={onBlur}
@@ -119,7 +119,7 @@ export function Formcardfound() {
               type='text'
               id='lastname'
               name='lastname'
-              placeholder='Lastname'
+              placeholder='prenom'
               value={dataForm.lastname}
               onChange={handleChange}
               onBlur={onBlur}

@@ -24,10 +24,10 @@ export function Navbare(){
                         <a href="#home">Home</a>
                     </li>
                     <li>
-                        <a href="#home">Action</a>
+                        <a href="#action">Action</a>
                     </li>
                     <li>
-                        <a href="#home">Contact</a>
+                        <a href="#formulaire">Formulaire</a>
                     </li>
                     <li className='bouton'>
                     <a className="boutondon">
