@@ -105,7 +105,7 @@ export function Formcardfound() {
             <input
               type='text'
               name='name'
-              placeholder='ex : allegria'
+              placeholder='ex : kapinga'
               value={dataForm.name}
               onChange={handleChange}
               onBlur={onBlur}
@@ -122,7 +122,7 @@ export function Formcardfound() {
               type='text'
               id='lastname'
               name='lastname'
-              placeholder='prenom'
+              placeholder='ex : bernice'
               value={dataForm.lastname}
               onChange={handleChange}
               onBlur={onBlur}
@@ -139,7 +139,7 @@ export function Formcardfound() {
               type='text'
               id='email'
               name='email'
-              placeholder='Email'
+              placeholder='ex : kapingabernice@gmail.com'
               value={dataForm.email}
               onChange={handleChange}
               onBlur={onBlur}
@@ -156,7 +156,7 @@ export function Formcardfound() {
               type='text'
               name='tel'
               id='tel'
-              placeholder='Tel'
+              placeholder='ex : 0828312365'
               value={dataForm.tel}
               onChange={handleChange}
               onBlur={onBlur}
@@ -172,7 +172,7 @@ export function Formcardfound() {
               type='text'
               id='nameusercardown'
               name='nameusercardown'
-              placeholder='nom du propriétaire de la carte'
+              placeholder='ex : kabulo'
               value={dataForm.nameusercardown}
               onChange={handleChange}
               onBlur={onBlur}
@@ -189,7 +189,7 @@ export function Formcardfound() {
               type='text'
               id='lastnameusercardown'
               name='lastnameusercardown'
-              placeholder='prenom du propriétaire de la carte'
+              placeholder='ex : francis'
               value={dataForm.lastnameusercardown}
               onChange={handleChange}
               onBlur={onBlur}
