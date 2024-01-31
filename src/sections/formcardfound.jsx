@@ -39,7 +39,7 @@ export function Formcardfound() {
       nameusercardown: "", 
       lastnameusercardown : "",
     }
-    if(touched.name == true && dataForm.name === ""){tel
+    if(touched.name == true && dataForm.name === ""){
       errors.name = "ce champs ne peut pas être vide "
     }
     if(touched.lastname == true && dataForm.lastname === ""){
@@ -66,12 +66,13 @@ export function Formcardfound() {
   const errors = validate()
   
   const onBlur = (e) => {
-    const {name} = e.target.name
-    setMareponse({...touched, [name] : true })
+    const {name} = e.target
+    setTouched({...touched, [name] : true })
   }
 
   const handleChange = (e) => {
-    setDataForm({[e.target.name] : e.target.value})
+    const {name, value} = e.target
+    setDataForm({[name] : value})
   }
 
   const handleSubmit = async (e) => {
