@@ -20,6 +20,10 @@
                 left: 50%;
                 transform: translateX(-50%);
                 cursor: pointer;
+                background-color: white;
+                border-radius: 5px;
+                padding: 1px 2px 0px 2px;
+        
             }
             ul{
                 flex-direction: column;
