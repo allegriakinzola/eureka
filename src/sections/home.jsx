@@ -31,8 +31,8 @@ export function Home(){
                     qui a perdu sa carte et celle qui l'a retrouvée.
                     </h5>
                     <div className='cartebouton'>
-                        <a href='#home' className='cp'>carte perdue</a>
-                        <a href='#home' className='cr'>carte ramassée</a>
+                        <a href='#formulaire' className='cp'>carte perdue</a>
+                        <a href='#formulaire' className='cr'>carte ramassée</a>
                     </div>
                     <div className='testemony'>
                     {
