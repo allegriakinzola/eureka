@@ -7,9 +7,9 @@ export function Service(){
                     <h1  className='tittle'>
                         Gagner de l'argent en aidant les autres à retrouver leurs cartes perdues
                     </h1>
-                    <p className='content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae suscipit iste ad commodi quibusdam odit earum facere at nulla velit quos non nobis iusto deleniti itaque, accusantium vero!</p>
+                    <p className='content'>Vous avez la chance de gagner 1$ en aidant les autres personnes à retrouver leurs cartes perdues ! Il vous suffit de récupérer toutes les cartes perdues que vous trouvez, puis de les renseigner sur notre plateforme.</p>
                     <div className='button'>
-                        <a href='#'id='#formulaire' >Cliquez ici</a>
+                        <a href='#formulaire' >Cliquez ici</a>
                     </div>
                 </div>
                 <div className='servicecontentimage'>
