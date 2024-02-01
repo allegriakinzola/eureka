@@ -27,8 +27,8 @@ export function Home(){
                         LA PLATEFORME MAGIQUE POUR RETROUVER VOS CARTES PERDUES.
                     </h1>
                     <h5>
-                        eureka est une plateforme numérique qui vous aide 
-                        à rétrouver vos cartes perdues et renseigner les cartes perdues.
+                    Eureka est une plateforme qui met en relation une personne 
+                    qui a perdu sa carte et celle qui l'a retrouvée.
                     </h5>
                     <div className='cartebouton'>
                         <a href='#home' className='cp'>carte perdue</a>

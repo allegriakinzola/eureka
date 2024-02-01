@@ -54,8 +54,6 @@ export function Formcardstoled() {
     }
     if (touched.tel == true && dataForm.tel === "") {
       errors.tel = "Ce champ est vide";
-    } else if (touched.tel == true && isNaN(dataForm.tel)) {
-      errors.tel = "Ce champ doit contenir un nombre";
     }
     if(touched.cardtype == true && dataForm.cardtype === "" ){
       errors.cardtype = "ce champs est vide"
@@ -64,8 +62,8 @@ export function Formcardstoled() {
   }
 
   const errors = validate()
-  let message ="blabla X";
   
+
   const onBlur = (e) => {
     const {name} = e.target
     setTouched({...touched, [name] : true })
@@ -84,7 +82,7 @@ export function Formcardstoled() {
  
       console.log(response.data);
       if(response.data === "exist"){
-        setShowsucess(false)
+       setShowsucess(false)
         setMareponse("votre carte a été trouvée")
       }else{
         setShowsucess(false)

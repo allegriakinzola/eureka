@@ -7,7 +7,18 @@ import { IoCallSharp } from "react-icons/io5";
 import { FaPersonDotsFromLine } from "react-icons/fa6";
 import { FaPersonDrowning } from "react-icons/fa6";
 
+
+function Success () {
+  return(
+    <div className='sucess'>
+      <div className='rond'></div>
+    </div>
+  )
+}
+
 export function Formcardfound() {
+  const [cardislosted, setCardislosted] = useState(true)
+  const [showsucess, setShowsucess] = useState(false)
   const [mareponse, setMareponse] = useState('')
   const [touched, setTouched] = useState({
     name : false,
@@ -82,17 +93,21 @@ export function Formcardfound() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setShowsucess(true)
 
     try {
       const response = await axios.post('https://heurekaback.onrender.com/userscardsfound', dataForm);
       console.log(response.data);
       if(response.data === "exist"){
+        setShowsucess(false)
         setMareponse("votre carte a été trouvée")
       }else{
+        setShowsucess(false)
         setMareponse("votre carte n'a pas été trouvée")
       }
     } catch (error) {
       console.error(`une erreur s'est produite lors de l'envoie des données : ${error}`);
+      setMareponse("vous devez remplir tous les champs")
     }
   };
 
@@ -224,10 +239,11 @@ export function Formcardfound() {
         <div className='submitcont'>
           <button type='submit' className='submit'>Envoyer</button>
         </div>
-        <div className='reponse'>
-          <p>{mareponse}</p>
-        </div>
-
+        {cardislosted ? (
+          <div className='reponse'>
+            {showsucess ? <Success /> :  <p>{mareponse}</p>}
+          </div>
+        ) : <p>{mareponse}</p>}
       </form>
     </div>
   );
