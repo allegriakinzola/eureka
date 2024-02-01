@@ -100,7 +100,7 @@ export function Formcardfound() {
       console.log(response.data);
       if(response.data === "exist"){
         setShowsucess(false)
-        setMareponse("votre carte a été trouvée")
+        setMareponse("votre carte n'a pas été trouvée")
       }else{
         setShowsucess(false)
         setMareponse("votre carte n'a pas été trouvée")
