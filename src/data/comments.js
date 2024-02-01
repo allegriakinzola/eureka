@@ -6,7 +6,7 @@ export const comments = [
     {
         id : 1,
         name : "Amisi Bumba", 
-        comment : "j'ai pu retrouver ma carte perdue il y a quelques mois grace à la",
+        comment : "j'avais perdu espoir mais au final eureka m'a aidé, merci beaucoup à eureka de m'avoir aider à retrouver mon passeport",
         date :'il y a 2 mois',
         classname :"profil1",
         image : imageprofil1
@@ -14,7 +14,7 @@ export const comments = [
     {
         id : 2,
         name : "Benedicte Mbala", 
-        comment : "j'ai pu retrouver ma carte perdue il y a quelques mois grâce à Eureka. je suis très content que ce genre de plateforme puisse exister au congo.",
+        comment : "j'ai pu retrouver ma carte perdue il y a quelques mois grâce à Eureka. je suis très contente que ce genre de plateforme puisse exister au congo.",
         date :'il y a 1 mois',
         classname :"profil2",
         image : imageprofil2
