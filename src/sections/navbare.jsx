@@ -46,9 +46,10 @@ export function Navbare(){
                 </span>
             </div>
             <div className="navbarebouton">
-                <a className="boutondon">
+                <a className="boutondon" href="https://wa.me/243828312365" target="_blank">
                     <span className='texticondon'>Faire un don</span>
                     <span  className='icondon'><FcDonate className="icondon-color"/></span>
+                 
                 </a>
                 <span className='spanoutbare' onClick={navtoggle}>
                     <AiOutlineBars className='outbare'/>
