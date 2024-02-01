@@ -1,3 +1,15 @@
 .sucess{
-  
+    background: -webkit-linear-gradient(90deg, #f3f2f3,#d9d9d9,#575757);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(90deg, #f3f2f3,#d9d9d9,#575757);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                                                  background: linear-gradient(90deg, #ccc7cc,#877d86,#575757);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  .rond{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $background-two;
+  }
 }

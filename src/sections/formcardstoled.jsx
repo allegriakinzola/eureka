@@ -11,7 +11,7 @@ import { FaPersonDrowning } from "react-icons/fa6";
 function Success () {
   return(
     <div className='sucess'>
-      <p>votre carte </p>
+      <div className='rond'></div>
     </div>
   )
 }
@@ -91,6 +91,7 @@ export function Formcardstoled() {
         setMareponse("votre carte n'a pas été trouvée")
       }  
     } catch (error) {
+      setShowsucess(false)
       console.error(`une erreur s'est produite lors de l'envoie des données : ${error}`);
       setMareponse("vous devez remplir tous les champs")
     }
