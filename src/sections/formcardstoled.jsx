@@ -18,7 +18,8 @@ function Success () {
 
 export function Formcardstoled() {
   const [mareponse, setMareponse] = useState('')
-  const [cardislosted, setCardislosted] = useState(false)
+  const [cardislosted, setCardislosted] = useState(true)
+  const [showsucess, setShowsucess] = useState(false)
   const [touched, setTouched] = useState({
     name : false,
     lastname : false,
@@ -77,16 +78,17 @@ export function Formcardstoled() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setShowsucess(true)
     try {
       const response = await axios.post('https://heurekaback.onrender.com/userscardsstoled', dataForm);
  
       console.log(response.data);
       if(response.data === "exist"){
-        setCardislosted(true)
+        setShowsucess(false)
         setMareponse("votre carte a été trouvée")
       }else{
+        setShowsucess(false)
         setMareponse("votre carte n'a pas été trouvée")
-        setCardislosted(true)
       }  
     } catch (error) {
       console.error(`une erreur s'est produite lors de l'envoie des données : ${error}`);
@@ -188,10 +190,11 @@ export function Formcardstoled() {
         <div className='submitcont'>
           <button type='submit' className='submit'>Envoyer</button>
         </div>
-        <div className='reponse'>
-          {cardislosted ? <p>{mareponse}</p> : <Success/>}
-        </div>
-
+        {cardislosted ? (
+          <div className='reponse'>
+            {showsucess ? <Success /> :   <p>{mareponse}</p>}
+          </div>
+        ) : <p>{mareponse}</p>}
       </form>
     </div>
   );
